@@ -93,7 +93,7 @@ const App = props => {
 
 ### useReducer
 
-类似 redux. useState 的替代方案, 可以使用对象
+类似 redux.useState 的替代方案, 可以使用对象
 
 ```````jsx
 const initState = { // 初始状态

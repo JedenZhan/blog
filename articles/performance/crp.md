@@ -55,7 +55,7 @@
 
 缓存的知识
 
-![image-20200719203807790](/home/jedenzhan/.config/Typora/typora-user-images/image-20200719203807790.png)
+![image-20200719203807790](https://mmbiz.qpic.cn/mmbiz_jpg/LNrWl4n5XIJXyRwjIh3cNL4kS9ARa2RLrw5uRfD6ftLWRoQpYiaW9qLIvZEOyuAVibiaeHllzK6I0y6jXtrfbQtkg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 ## DNS优化
 
