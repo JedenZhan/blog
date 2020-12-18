@@ -74,9 +74,4 @@
 1. [关于 GOPATH 和 GOMOD](./articles/golang/gopath和gomod.md)
 
 
-
-
-
-## 刷题啊
-
-1. [数组最长累加和](./articles/leetcode/数组最长累加和.md)
+## [刷题啊](./articles/leetcode/index.md)
