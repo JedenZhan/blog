@@ -53,12 +53,14 @@
 ### HTTP
 
 1. [HTTP 跨域](./articles/http/HTTP跨域方法.md)
+2. [HTTP1.0/HTTP2.0/HTTP3.0](./articles/http/http-all.md)
 
 ### 算法
 
 1. [KMP 算法讲解](./articles/algorithm/AL%20KMP.md)
 2. [二叉树的遍历](./articles/algorithm/AL%20二叉树的遍历.md)
 3. [大根堆和小根堆](./articles/algorithm/AL%20大根堆和小根堆.md)
+4. [刷题啊](./articles/leetcode/index.md)
 
 ### Babel
 
@@ -69,9 +71,8 @@
 1. [Cookie 的认识](./articles/broswer/Cookie基本.md)
 2. [浏览器一帧时间做了什么](./articles/broswer/浏览器的一帧.md)
 
-## GoLang
+### GoLang
 
 1. [关于 GOPATH 和 GOMOD](./articles/golang/gopath和gomod.md)
 
-
-## [刷题啊](./articles/leetcode/index.md)
+### 数据可视化(updating)
