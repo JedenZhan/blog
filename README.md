@@ -29,7 +29,7 @@
    1. [vDOM](./articles/react/React实现虚拟DOM.md)
    2. [实现组件化](./articles/react/React的组件化机制.md)
    3. [实现 diff 算法](./articles/react/React%20实现%20diff%20算法.md)
-5. [Redux 中间件机制](./articles/react/Redux的中间件机制.md)
+5. [Redux 源码](./articles/react/Redux源码.md)
 6. [一个简单的新手指导](./articles/react/简单的新手指导.md)
 
 ### Vue
