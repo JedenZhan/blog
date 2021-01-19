@@ -35,6 +35,7 @@
 ### Vue
 
 1. [mvvm原理](https://github.com/JedenZhan/fork-mvvm)
+2. [vue nextTick源码](./articles/vue/this$nextTick.md)
 
 ### CSS
 
