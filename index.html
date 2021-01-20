@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-23 20:29:27
- * @LastEditTime: 2021-01-19 19:36:25
+ * @LastEditTime: 2021-01-20 11:20:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/index.html
@@ -12,81 +12,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
-    <script>
-      // 并查集的实现
-      class UnionFind {
-        constructor(n) {
-          this.parent = new Array(n).fill(0).map((e, i) => i);
-        }
-        union(i1, i2) {
-          // 合并, 寻找i2和i1的父节点
-          this.parent[this.find(i2)] = this.find(i1);
-        }
-        find(i) {
-          // 寻找, 并查集寻找头部, 而头部肯定的值肯定是和自己的index相等的
-          if (this.parent[i] !== i) this.parent[i] = this.find(this.parent[i]);
-          return this.parent[i];
-        }
+    <style>
+      button {
+        background: none;
+        border: 0;
+        box-sizing: border-box;
+        margin: 1em;
+        padding: 1em 2em;
+        box-shadow: inset 0 0 0 2px #f45e61;
+        color: #f45e61;
+        font-weight: 700;
+        vertical-align: middle;
       }
 
-      const accountsMerge = accounts => {
-        const emailToIndex = new Map(),
-          emailToName = new Map();
-        let emailsCount = 0;
-        // 遍历一遍, 如果这个账户是新的, 保存email索引, 保存email的户主名字
-        accounts.forEach(account => {
-          const name = account[0],
-            size = account.length;
-          for (let i = 1; i < size; i++) {
-            const email = account[i];
-            if (!emailToIndex.has(email)) {
-              emailToIndex.set(email, emailsCount++);
-              emailToName.set(email, name);
-            }
-          }
-        });
-        debugger;
-        // 合并emails
-        const uf = new UnionFind(emailsCount);
-        accounts.forEach(account => {
-          const firstEmail = account[1],
-            firstIndex = emailToIndex.get(firstEmail),
-            size = account.length;
-          for (let i = 2; i < size; i++) {
-            const nextEmail = account[i],
-              nextIndex = emailToIndex.get(nextEmail);
-            uf.union(firstIndex, nextIndex);
-          }
-        });
+      button::before,
+      button::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: inherit;
+      }
 
-        const indexToEmails = new Map();
-        for (const i of emailToIndex.keys()) {
-          const index = uf.find(emailToIndex.get(i)), // index总是最顶部那个
-            account = indexToEmails.get(index) ? indexToEmails.get(index) : [];
-          account.push(i);
-          indexToEmails.set(index, account);
-        }
+      .draw {
+        transition: color 0.25s;
+      }
 
-        // 最后和名字组合下就ok
-        const merged = [];
+      .draw::before,
+      .draw::after {
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+      }
 
-        for (const e of indexToEmails.values()) {
-          e.sort();
-          const name = emailToName.get(e[0]);
-          merged.push([name, ...e]);
-        }
-        return merged;
-      };
-      console.log(
-        accountsMerge([
-          ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
-          ["John", "johnsmith@mail.com", "john00@mail.com"],
-          ["Mary", "mary@mail.com"],
-          ["John", "johnnybravo@mail.com"],
-        ])
-      );
+      .draw::before {
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="draw">Button</button>
+    <script>
+      // 并查集的实现
     </script>
   </body>
 </html>
