@@ -5,7 +5,7 @@ tags: 算法
 
 ## 什么是 KMP, 解决了什么问题
 
-KMP 是三个人发明的算法, 解决的问题是: `a 字符串在 b 字符串的位置`, 就是 js 的 String.prototype.indexOf 方法
+KMP 是三个人发明的算法, 解决的问题是: `a 字符串在 b 字符串的位置`, 就是 js 的 String.prototype.indexOf 方法解决的问题
 
 比如:
 
