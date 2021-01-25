@@ -11,7 +11,7 @@
 3. [Babel 编译 Generator 的结果](./articles/js/Babel编译Generator.md)
 4. [手写 Promise 对象方法](./articles/js/ES6%20Promise对象方法手写.md)
 5. [简单版 Promise 的实现](./articles/js/ES6的Promise.md)
-6. [完整的 Promise 实现](./articles/js/ES6完整的Promise.md)
+6. [链式调用的 Promise 实现](./articles/js/ES6链式调用的Promise.md)
 7. [this 优先级](./articles/js/JS%20this优先级.md)
 8. [柯里化](./articles/js/JS%20柯里化实现.md)
 9. [手写 call,bind,apply](./articles/js/JS手写bind-apply-call.md)

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-18 17:33:58
- * @LastEditTime: 2021-01-23 14:51:46
+ * @LastEditTime: 2021-01-25 19:16:32
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/articles/leetcode/index.md
@@ -25,3 +25,4 @@
 14. [回溯法集合-回溯](./回溯法.md)
 15. [罗马转数字/数组形式加法](./罗马转数字.md)
 16. [连接网络操作次数-并查集](./连接网络的操作次数-并查集.md)
+17. [斜杠划分区域-并查集](./斜杠划分区域-并查集.md)

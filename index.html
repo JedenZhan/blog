@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-23 20:29:27
- * @LastEditTime: 2021-01-20 11:20:43
+ * @LastEditTime: 2021-01-25 19:11:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/index.html
@@ -55,6 +55,101 @@
     <button class="draw">Button</button>
     <script>
       // 并查集的实现
+      const pen = "pending",
+        rej = "rejected",
+        res = "resolved";
+      class MyPromise {
+        constructor(fn) {
+          this.status = pen;
+          this.state = null;
+          this.resolvedCallbacks = [];
+          this.rejectedCallbacks = [];
+          const resolve = v => {
+            if (this.status !== pen) return;
+            this.state = v;
+            this.status = res;
+            this.resolvedCallbacks.forEach(cb => cb(v));
+          };
+          const reject = v => {
+            if (this.status !== pen) return;
+            this.state = v;
+            this.status = rej;
+            this.rejectedCallbacks.forEach(cb => cb(v));
+          };
+
+          try {
+            fn(resolve, reject);
+          } catch (e) {
+            reject(e);
+          }
+        }
+
+        then(onResolve, onReject) {
+          let promise2;
+          onResolve = typeof onResolve === "function" ? onResolve : v => v;
+          onReject = typeof onReject === "function" ? onReject : e => new Error(e);
+
+          if (this.status === res)
+            return new MyPromise((res, rej) => {
+              try {
+                let x = onResolve(this.state);
+                if (x instanceof MyPromise) x.then(res, rej);
+                res(x);
+              } catch (e) {
+                rej(e);
+              }
+            });
+
+          if (this.status === rej)
+            return new MyPromise((res, rej) => {
+              try {
+                let x = onRejected(this.state);
+                if (x instanceof MyPromise) x.then(res, rej);
+              } catch (e) {
+                rej(e);
+              }
+            });
+
+          if (this.status === pen)
+            return new MyPromise((res, rej) => {
+              this.resolvedCallbacks.push(v => {
+                try {
+                  const x = onResolve(this.state);
+                  if (x instanceof MyPromise) x.then(res, rej);
+                } catch (e) {
+                  rej(e);
+                }
+              });
+              this.rejectedCallbacks.push(v => {
+                try {
+                  const x = onReject(this.state);
+                  if (x instanceof MyPromise) x.then(res, rej);
+                } catch (e) {
+                  rej(e);
+                }
+              });
+            });
+        }
+      }
+
+      let pro = new MyPromise((res, rej) => {
+        res(111111);
+      });
+
+      pro
+        .then(v => {
+          console.log(v);
+          return 1;
+        })
+        .then(v => {
+          console.log(v);
+          return 2;
+        })
+        .then(v => {
+          console.log(v);
+        });
+
+      console.log("i am behand");
     </script>
   </body>
 </html>
