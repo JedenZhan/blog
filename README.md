@@ -19,6 +19,7 @@
 11. [JavaScript 的继承](./articles/js/JS继承详解.md)
 12. [解决 a && a.b && a.b.c && a.b.c.d](./articles/js/JS解决a.b.c.d...之道.md)
 13. [防抖与节流](./articles/js/JS防抖与节流.md)
+14. [常见排序的JS实现](./articles/js/常见排序的JS实现.md)
 
 ### React
 
