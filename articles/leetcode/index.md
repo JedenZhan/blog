@@ -1,12 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-18 17:33:58
- * @LastEditTime: 2021-01-28 10:29:47
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /blog/articles/leetcode/index.md
--->
-
 ## LeetCode算法 和 其他算法题
 
 1. [寻找不同](./寻找不同.md)
@@ -28,3 +19,6 @@
 17. [斜杠划分区域-并查集](./斜杠划分区域-并查集.md)
 18. [多米诺骨牌](./多米诺骨牌.md)
 19. [数组中间索引值](中间索引值.md)
+20. [最小体力消耗路径-并查集](./最小体力消耗路径-并查集.md)
+21. [替换后的最长重复字符串-双指针](./替换后最长重复字符-双指针.md)
+
