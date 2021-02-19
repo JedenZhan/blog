@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-12-23 20:29:27
- * @LastEditTime: 2021-01-25 19:11:55
+ * @LastEditTime: 2021-02-18 20:05:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog/index.html
@@ -150,6 +150,24 @@
         });
 
       console.log("i am behand");
+      const minKBitFlips = (arr, k) => {
+        const n = arr.length,
+          diff = new Array(n + 1).fill(0);
+        let s = 0,
+          ans = 0;
+        for (let i = 0; i < n; i++) {
+          s += diff[i];
+          if ((s + arr[i]) % 2 === 0) {
+            if (i + k > n) return -1;
+            diff[i]++;
+            diff[i + k]--;
+            ans++;
+            s++;
+          }
+        }
+        return ans;
+      };
+      console.log(minKBitFlips([0, 0, 0, 1, 0, 1], 1));
     </script>
   </body>
 </html>
