@@ -10,12 +10,12 @@ const minKBitFlips = (arr, k) => {
   let ret = 0, s = 0
   for (let i = 0; i < n; i ++) {
     s += diff[i]
-    if ((s + arr[i]) % 2 === 0) { // 通过累加diff数组得到当前需要翻转的次数,
-      if (s + k > n) return -1
-      diff[i] ++
-      diff[i + k] --
-      ret ++
-      s ++
+    if ((s + arr[i]) % 2 === 0) { // 通过累加diff数组得到当前需要翻转的次数, 如果该位置是翻转奇数次得到的1, 该位置就是0, 否则为1
+      if (s + k > n) return -1 // 如果大于长度了, 越界, 不能满足要求
+      diff[i] ++ // 这时候i位置翻转了, i位置翻转差+1
+      diff[i + k] -- // 到k位置, 翻转差-1
+      ret ++ // 翻转次数+ 1
+      s ++ // s是当前位置的翻转次数
     }
   }
   return ret
