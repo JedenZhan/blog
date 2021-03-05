@@ -168,6 +168,18 @@
         return ans;
       };
       console.log(minKBitFlips([0, 0, 0, 1, 0, 1], 1));
+      const binarySearch = (arr, t) => {
+        let left = 0,
+          right = arr.length - 1;
+        while (left < right) {
+          const mid = Math.floor((right - left) / 2) + left;
+          if (arr[mid] > t) right = mid;
+          else if (arr[mid] === t) return mid;
+          else left = mid + 1;
+        }
+        return left;
+      };
+      console.log(binarySearch([1, 2, 3, 4], 3));
     </script>
   </body>
 </html>
