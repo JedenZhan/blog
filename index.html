@@ -54,132 +54,57 @@
   <body>
     <button class="draw">Button</button>
     <script>
-      // 并查集的实现
-      const pen = "pending",
-        rej = "rejected",
-        res = "resolved";
-      class MyPromise {
-        constructor(fn) {
-          this.status = pen;
-          this.state = null;
-          this.resolvedCallbacks = [];
-          this.rejectedCallbacks = [];
-          const resolve = v => {
-            if (this.status !== pen) return;
-            this.state = v;
-            this.status = res;
-            this.resolvedCallbacks.forEach(cb => cb(v));
-          };
-          const reject = v => {
-            if (this.status !== pen) return;
-            this.state = v;
-            this.status = rej;
-            this.rejectedCallbacks.forEach(cb => cb(v));
-          };
-
-          try {
-            fn(resolve, reject);
-          } catch (e) {
-            reject(e);
-          }
-        }
-
-        then(onResolve, onReject) {
-          let promise2;
-          onResolve = typeof onResolve === "function" ? onResolve : v => v;
-          onReject = typeof onReject === "function" ? onReject : e => new Error(e);
-
-          if (this.status === res)
-            return new MyPromise((res, rej) => {
-              try {
-                let x = onResolve(this.state);
-                if (x instanceof MyPromise) x.then(res, rej);
-                res(x);
-              } catch (e) {
-                rej(e);
-              }
-            });
-
-          if (this.status === rej)
-            return new MyPromise((res, rej) => {
-              try {
-                let x = onRejected(this.state);
-                if (x instanceof MyPromise) x.then(res, rej);
-              } catch (e) {
-                rej(e);
-              }
-            });
-
-          if (this.status === pen)
-            return new MyPromise((res, rej) => {
-              this.resolvedCallbacks.push(v => {
-                try {
-                  const x = onResolve(this.state);
-                  if (x instanceof MyPromise) x.then(res, rej);
-                } catch (e) {
-                  rej(e);
-                }
-              });
-              this.rejectedCallbacks.push(v => {
-                try {
-                  const x = onReject(this.state);
-                  if (x instanceof MyPromise) x.then(res, rej);
-                } catch (e) {
-                  rej(e);
-                }
-              });
-            });
-        }
-      }
-
-      let pro = new MyPromise((res, rej) => {
-        res(111111);
-      });
-
-      pro
-        .then(v => {
-          console.log(v);
-          return 1;
-        })
-        .then(v => {
-          console.log(v);
-          return 2;
-        })
-        .then(v => {
-          console.log(v);
-        });
-
-      console.log("i am behand");
-      const minKBitFlips = (arr, k) => {
+      const test = (arr, target, limit) => {
         const n = arr.length,
-          diff = new Array(n + 1).fill(0);
-        let s = 0,
-          ans = 0;
-        for (let i = 0; i < n; i++) {
-          s += diff[i];
-          if ((s + arr[i]) % 2 === 0) {
-            if (i + k > n) return -1;
-            diff[i]++;
-            diff[i + k]--;
-            ans++;
-            s++;
+          ans = [];
+        const dfs = (ret, t) => {
+          if (ret.length === limit) {
+            if (t === target) {
+              ans.push([...ret]);
+            }
+            return;
           }
-        }
+
+          for (let i = 0; i < n; i++) {
+            ret.push(arr[i]);
+            dfs(ret, t + arr[i]);
+            ret.pop();
+          }
+        };
+        dfs([], 0);
         return ans;
       };
-      console.log(minKBitFlips([0, 0, 0, 1, 0, 1], 1));
-      const binarySearch = (arr, t) => {
-        let left = 0,
-          right = arr.length - 1;
-        while (left < right) {
-          const mid = Math.floor((right - left) / 2) + left;
-          if (arr[mid] > t) right = mid;
-          else if (arr[mid] === t) return mid;
-          else left = mid + 1;
+      console.log(test([1, 2, 3, 4, 5], 5, 3));
+
+      var partition = function (s) {
+        const n = s.length,
+          g = new Array(n).fill(_ => new Array(n).fill(true)),
+          ret = [],
+          ans = [];
+        for (let i = n - 1; i >= 0; i--) {
+          for (let j = i + 1; j < n; j++) {
+            g[i][j] = g[i + 1][j - 1] && s[i] === s[j];
+          }
         }
-        return left;
+        console.log(g);
+
+        const dfs = i => {
+          if (i === n) {
+            ret.push([...ans]);
+            return;
+          }
+          for (let j = i; j < n; ++j) {
+            if (g[i][j]) {
+              ans.push(s.slice(i, j + 1));
+              dfs(j + 1);
+              ans.pop();
+            }
+          }
+        };
+        dfs(0);
+        return ret;
       };
-      console.log(binarySearch([1, 2, 3, 4], 3));
+      console.log(partition("zzzzdsfdd"));
     </script>
   </body>
 </html>
