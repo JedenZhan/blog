@@ -53,58 +53,6 @@
   </head>
   <body>
     <button class="draw">Button</button>
-    <script>
-      const test = (arr, target, limit) => {
-        const n = arr.length,
-          ans = [];
-        const dfs = (ret, t) => {
-          if (ret.length === limit) {
-            if (t === target) {
-              ans.push([...ret]);
-            }
-            return;
-          }
-
-          for (let i = 0; i < n; i++) {
-            ret.push(arr[i]);
-            dfs(ret, t + arr[i]);
-            ret.pop();
-          }
-        };
-        dfs([], 0);
-        return ans;
-      };
-      console.log(test([1, 2, 3, 4, 5], 5, 3));
-
-      var partition = function (s) {
-        const n = s.length,
-          g = new Array(n).fill(_ => new Array(n).fill(true)),
-          ret = [],
-          ans = [];
-        for (let i = n - 1; i >= 0; i--) {
-          for (let j = i + 1; j < n; j++) {
-            g[i][j] = g[i + 1][j - 1] && s[i] === s[j];
-          }
-        }
-        console.log(g);
-
-        const dfs = i => {
-          if (i === n) {
-            ret.push([...ans]);
-            return;
-          }
-          for (let j = i; j < n; ++j) {
-            if (g[i][j]) {
-              ans.push(s.slice(i, j + 1));
-              dfs(j + 1);
-              ans.pop();
-            }
-          }
-        };
-        dfs(0);
-        return ret;
-      };
-      console.log(partition("zzzzdsfdd"));
-    </script>
+    <script></script>
   </body>
 </html>
