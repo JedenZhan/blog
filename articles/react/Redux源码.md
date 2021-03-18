@@ -154,7 +154,7 @@ createStore接收参数是reducer, enhancer
 精简化的源码
 
 ```js
-e. g.ort default function createStore(reducer, preloadedState, enhancer) {
+export default function createStore(reducer, preloadedState, enhancer) {
   // 如果preloadedState和enhancer是函数, 或者enhancer, 第四个参数是函数
   // 提示你好像没有使用applyMiddleware合并中间件
   if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
@@ -270,7 +270,7 @@ dispatch把state, action传给reducer执行, reducer返回一个新的state, 然
 使用这个合并我们的reducer, 那这个函数做了什么呢
 
 ```js
-e. g.ort default function combineReducers (reducers) {
+export default function combineReducers (reducers) {
   const reducerKeys = Object.keys(reducers),
     finalReducers = {}
   
