@@ -370,15 +370,15 @@ e. g.
 ```js
 const a = aa => {
         console.log(`i am ${aa}`)
-        return aa
+        return `${aa}1`
       },
       b = bb => {
         console.log(`i am ${bb}`)
-        return bb
+        return `${bb}2`
       },
       c = cc => {
         console.log(`i am ${cc}`)
-        return cc
+        return `${cc}3`
       };
 
 const d = [a, b, c].reduce((func1, func2) => (...args) => func1(func2(...args)))
@@ -387,9 +387,9 @@ d('dispatch')
 
 // 返回值
 // i am dispatch
-// i am dispatch
-// i am dispatch
-// 'i am diapatch'
+// i am dispatch3
+// i am dispatch32
+// 'i am dispatch321'
 ```
 
 也就是说, 这个compose函数是将我们的中间件函数整合, 然后返回一个头部函数, 在上面的例子里, d最终变成了`a(b(c(...args)))` 其中args就是我们传进去的'diapatch', d的意思是, c执行, 结果传给b, b执行, 结果传给a, a执行
@@ -445,7 +445,7 @@ const ThunkMiddleWare = next => action => { // next 以后会是 diapatch 或者
 }
 ```
 
-chain 经过 componse 后呢, 不变, 然后在上面可以看出来 store.dispatch 是 next 实参
+chain 经过 compose 后呢, 不变, 然后在上面可以看出来 store.dispatch 是 next 实参
 
 当我们调用一个函数 action 的时候, 比如这样
 
