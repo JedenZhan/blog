@@ -63,38 +63,27 @@
       console.time("a");
       new Array(10000).fill(0).map(() => {});
       console.timeEnd("a");
-      var evalRPN = function (tokens) {
-        let ans = 0;
-        const n = tokens.length;
-        if (n === 0) return ans;
-        const stack = [];
-        tokens.forEach(token => {
-          const n = Number(token);
-          debugger
-          if (!isNaN(n)) {
-            stack.push(n);
-          } else {
-            ans = 0;
-            switch (token) {
-              case "+":
-                ans += stack.pop() + stack.pop();
-                break;
-              case "*":
-                ans += stack.pop() * stack.pop();
-                break;
-              case "/":
-                ans += Number((1 / (stack.pop() / stack.pop())).toFixed());
-                break;
-              case "-":
-                ans += -(stack.pop() - stack.pop());
-                break;
-            }
-            stack.push(ans);
+      const find132pattern = arr => {
+        const n = arr.length,
+          cad = [arr[n - 1]];
+        let maxK = -Infinity; // maxK是132里面的2
+
+        debugger;
+        for (let i = n - 2; i >= 0; i--) {
+          const t = arr[i];
+          if (t < maxK) return true;
+          // 如果这个数比2小则找到了1
+          while (cad.length && t > cad[cad.length - 1]) {
+            // 将t和之前找到的比较大的比较, 如果大于之前找到的数, 之前找到的数就可以作为2, 然后一直尝试找最小的2 ,这个数t作为3
+            maxK = cad.pop();
           }
-        });
-        return ans;
+          // 将2的候选进入单调栈
+          if (t > maxK) cad.push(t);
+        }
+        return false;
       };
-      console.log(evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]));
+
+      console.log(find132pattern([1, 2, 3, 5, 3, 4, 2, 1, 4, 5, 6]));
     </script>
   </body>
 </html>
