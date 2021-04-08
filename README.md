@@ -78,3 +78,7 @@
 1. [关于 GOPATH 和 GOMOD](./articles/golang/gopath和gomod.md)
 
 ### 数据可视化(updating)
+
+基本数据类型, symbol new
+
+获取对象原型
