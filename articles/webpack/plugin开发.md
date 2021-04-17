@@ -106,6 +106,7 @@ module.exports = class NoUseFilesPlugin {
 
 // 遍历目标文件夹, 遇到文件夹递归读取
 function walk(dir, ret) {
+  if (!ret) ret = {}
   const files = fs.readdirSync(dir)
   for (const file of files) {
     const p = path.join(dir, file), stat = fs.statSync(p)
@@ -132,3 +133,6 @@ new UnusedModulesPlugin({
   exclude: [/\.spec\.js$/],
 }),
 ```
+
+- 注册在afterOptimizeChunkAssets生命周期
+- 获取modules的source, walk函数递归读取文件夹里面全部文件
