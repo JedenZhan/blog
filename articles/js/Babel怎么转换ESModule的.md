@@ -27,7 +27,7 @@ export default a
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-}); // esmodlue 标记
+}); // es module 标记
 exports.default = exports.b = void 0; // 清空导出
 
 var _react = _interopRequireDefault(require("react"));

@@ -119,14 +119,14 @@ Function.prototype.myBind = function (_this, ...args) {
 
 ```js
 Function.prototype.myBind = function (_this, ...args) {
-    if (typeof this !== 'function') throw new Error('error')
-    let F = function () {}
-    let targetMethod = this
-    let result = function (...innerArgs) {
-        return targetMethod.apply(this instanceof F ? this : _this, [...args, ...innerArgs])
+    function F() {}
+    const targetMethods = this
+    function result(...innerArgs) {
+        // 如果 this instanceOf F, 就是被用作构造函数了
+        return targetMethods.apply(this instanceOf F ? this : _this, [...args, ...innerArgs])
     }
     F.prototype = this.prototype
-    result.prototype = new F() // 有点类似改良的组合继承
+    result.prototype = new F()
     return result
 }
 ```

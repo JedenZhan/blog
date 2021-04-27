@@ -24,9 +24,7 @@ const getValue = async () => {
 getValue() // 3s 后输出 3
 ```
 
-看官们应该了解 async 就是 promise + generater 的语法糖
-
-
+看官们应该了解 async 就是 promise + generator 的语法糖
 
 ## 写出 Generator
 
@@ -69,6 +67,4 @@ const myAsync = (genfn, ...args) => {
 ```js
 myAsync(main) // 每隔一秒分别输出 2, 3, 4
 ```
-
-共勉
 

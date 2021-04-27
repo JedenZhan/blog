@@ -81,6 +81,7 @@ module.exports = class NoUseFilesPlugin {
         // 标记我们要diff的文件, 不是目标目录的不记录
         chunks.forEach(chunk => {
           chunk.getModules().map(module => {
+            fs.writeFileSync(output, JSON.stringify(module, null, 2))
             const src = module.source || ''
             if (!src || src.indexOf(sourceDir) === -1) return
             modules[src] = 1
@@ -97,9 +98,10 @@ module.exports = class NoUseFilesPlugin {
       ret = []
     
     for (const f in files) {
-      if (isExclude(exclude, i)) continue
-      if (!module[i]) ret.push(i)
+      if (isExclude(exclude, i)) continue // 不包含的文件忽略
+      if (!module[i]) ret.push(i) // 文件不再module里面, 表示没有引用, 保存
     }
+    // 使用 path.relative 生成为相对路径
     return ret.map(f => path.relative(sourceDir, f))
   }
 }
@@ -107,6 +109,7 @@ module.exports = class NoUseFilesPlugin {
 // 遍历目标文件夹, 遇到文件夹递归读取
 function walk(dir, ret) {
   if (!ret) ret = {}
+  // sync为同步读取
   const files = fs.readdirSync(dir)
   for (const file of files) {
     const p = path.join(dir, file), stat = fs.statSync(p)

@@ -136,3 +136,21 @@ function throttle(fn, time) {
 }
 ```
 
+完美的节流
+
+```js
+function throttle(fn, delay) {
+  let timer = null, startTime = Date.now()
+  return (...rest) => {
+    let currentTime = Date.now(),
+      remainingTime = delay - (currentTime - startTime)
+    clearTimeout(timer)
+    if (remainingTime <= 0) {
+      fn.apply(this, rest)
+      startTime = Date.now()
+    } else {
+      timer = setTimeout(fn, remainingTime)
+    }
+  }
+}
+```
