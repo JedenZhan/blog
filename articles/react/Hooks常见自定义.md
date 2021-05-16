@@ -161,3 +161,19 @@ const useTitle = title => {
 export default useTitle
 ```
 
+## 实现元素是否被hover
+```js
+function useHover(e) {
+    const [isHover, setIsHover] = useState(false)
+    useEffect(() => {
+        function cb() {
+            setIsHover(true)
+        }
+        e.addEventListener('mouseover', cb)
+        return () => {
+            e.removeEventListener(cb)
+        }
+    }, [e])
+    return isHover
+}
+```
