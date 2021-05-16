@@ -54,6 +54,7 @@
 2. [HTML5 fetch 方法](./articles/html/HTML5%20fetch.md)
 3. [HTML5 readFile](./articles/html/HTML5%20readFile.md)
 4. [轮播图的实现(setTimeout 和 requestAnimationFrame)](./articles/html/HTML%20轮播图.md)
+5. [IntersectionObserver的使用](./articles/html/IntersectionObserver.md)
 
 ### HTTP
 
@@ -84,3 +85,7 @@
 基本数据类型, symbol new
 
 获取对象原型
+
+
+
+小程序下拉刷新

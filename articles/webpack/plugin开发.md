@@ -3,7 +3,7 @@
 官方文档, 一个webpack插件需要有
 
 - 一个class类
-- 在类里面定义一个apply方法
+- 在原型上定义一个apply方法
 - 指定一个触及到webpack本身的事件钩子
 - 操作webpack内部的数据
 - 实现功能后调用webpack提供的callback
@@ -139,3 +139,4 @@ new UnusedModulesPlugin({
 
 - 注册在afterOptimizeChunkAssets生命周期
 - 获取modules的source, walk函数递归读取文件夹里面全部文件
+

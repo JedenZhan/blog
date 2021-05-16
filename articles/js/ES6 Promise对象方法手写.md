@@ -13,18 +13,19 @@ tags: [ES6, JavaScript]
 
 ```js
 Promise.myAll = arr => new Promise((resolve, reject) => {
-    const result = []
-    arr.forEach(item => {
-        if (!(item instanceof Promise)) {
-            item = Promise.resolve(item)
-        }
-        item.then(v => {
-            result.push(v)
-            if (result.length === arr.length) resolve(result)
-        }, e => {
-            reject(e)
+    const n = arr.length, result = []
+    let count = 0
+    for (let i = 0; i < n; i ++) {
+        let item = arr[i]
+        if (!(item instanceof Promise)) item = Promise.resolve(item)
+        item.then(res => {
+            result[i] = res
+            count ++
+            if (count === n) resolve(result)
+        }, rej => {
+            reject(rej)
         })
-    })
+    }
 })
 ```
 
