@@ -20,6 +20,7 @@
       border: 1px solid #f00;
       margin-top: 20px;
     }
+
     .inner {
       height: 50px;
       background-color: #000;
@@ -79,7 +80,7 @@
       return head
     }
 
-    console.log(List2Tree([ { id: 1, parentId: null }, { id: 2, parentId:1 }, { id: 3, parentId: 2 } ]))
+    console.log(List2Tree([{ id: 1, parentId: null }, { id: 2, parentId: 1 }, { id: 3, parentId: 2 }]))
 
 
     function union(str) {
@@ -89,7 +90,7 @@
           ans.push(res.join(''))
           return
         }
-        for (let i = 0; i < n; i ++) {
+        for (let i = 0; i < n; i++) {
           if (!set.has(str[i])) {
             set.add(str[i])
             dfs([...res, str[i]], set)
@@ -114,20 +115,29 @@
         }
         if (a > b) {
           ans.push(b)
-          j ++
+          j++
         } else if (a < b) {
           ans.push(a)
-          i ++
+          i++
         } else {
           ans.push(a, b)
-          i ++
-          j ++
+          i++
+          j++
         }
       }
       return ans
     }
 
     console.log(combine([1, 4, 5], [2, 3, 4]))
+
+    debugger
+    window.addEventListener('storage', e => {
+      console.log(e)
+    })
+    let i = 0
+    setInterval(() => {
+      localStorage.setItem('key', i++)
+    }, 100);
 
   </script>
 </body>
