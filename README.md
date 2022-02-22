@@ -21,6 +21,7 @@
 13. [防抖与节流](./articles/js/JS防抖与节流.md)
 14. [常见排序的JS实现](./articles/js/常见排序的JS实现.md)
 15. [JS 柯里化思想](./articles/js/js柯里化.md)
+16. [TS 基础]
 
 ### React
 
@@ -82,10 +83,4 @@
 
 ### 数据可视化(updating)
 
-基本数据类型, symbol new
-
-获取对象原型
-
-
-
-小程序下拉刷新
+1. [线性代数](./articles/graphics/线性代数.md)
