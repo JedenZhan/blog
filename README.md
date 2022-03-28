@@ -19,7 +19,7 @@
 11. [JavaScript 的继承](./articles/js/JS继承详解.md)
 12. [解决 a && a.b && a.b.c && a.b.c.d](./articles/js/JS解决a.b.c.d...之道.md)
 13. [防抖与节流](./articles/js/JS防抖与节流.md)
-14. [常见排序的JS实现](./articles/js/常见排序的JS实现.md)
+14. [常见排序的 JS 实现](./articles/js/常见排序的JS实现.md)
 15. [JS 柯里化思想](./articles/js/js柯里化.md)
 
 ### React
@@ -37,9 +37,9 @@
 
 ### Vue
 
-1. [MVVM原理](https://github.com/JedenZhan/fork-mvvm)
-2. [vue nextTick源码](./articles/vue/this$nextTick.md)
-3. [Vue3新特性](./articles/vue/vue3-新特性.md)
+1. [MVVM 原理](https://github.com/JedenZhan/fork-mvvm)
+2. [vue nextTick 源码](./articles/vue/this$nextTick.md)
+3. [Vue3 新特性](./articles/vue/vue3-新特性.md)
 
 ### CSS
 
@@ -54,7 +54,7 @@
 2. [HTML5 fetch 方法](./articles/html/HTML5%20fetch.md)
 3. [HTML5 readFile](./articles/html/HTML5%20readFile.md)
 4. [轮播图的实现(setTimeout 和 requestAnimationFrame)](./articles/html/HTML%20轮播图.md)
-5. [IntersectionObserver的使用](./articles/html/IntersectionObserver.md)
+5. [IntersectionObserver 的使用](./articles/html/IntersectionObserver.md)
 
 ### HTTP
 
@@ -76,8 +76,8 @@
 
 ### 浏览器
 
-1. [Cookie 的认识](./articles/broswer/Cookie基本.md)
-2. [浏览器一帧时间做了什么](./articles/broswer/浏览器的一帧.md)
+1. [Cookie 的认识](./articles/browser/Cookie基本.md)
+2. [浏览器一帧时间做了什么](./articles/browser/浏览器的一帧.md)
 
 ### GoLang
 
@@ -85,4 +85,4 @@
 
 ### 数据可视化(updating)
 
-1. [线性代数](./articles/graphics/线性代数.md)
+1. [Shader](./articles/graphics/shader/index.md)
