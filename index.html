@@ -44,100 +44,34 @@
     <div class="inner"></div>
   </div>
   <script>
-    function combine(...arr) {
-      const ans = []
-      arr[0].forEach(i => {
-        let flag = true
-        arr.forEach(j => {
-          if (!j.includes(i)) flag = false
-        })
-        if (flag) ans.push(i)
-      });
-      return ans
-    }
-    class TreeNode {
-      constructor(val) {
-        this.id = val
-        this.children = []
+    class UnionFind {
+      constructor(n) {
+        this.f = new Array(n).fill(0).map((_, i) => i)
+      }
+
+      find(i) {
+        if (i === this.f[i]) return i
+        else {
+          this.f[i] = this.find(this.f[i])
+          return this.f[i]
+        }
+      }
+
+      union(i, j) {
+        const fi = this.find(i)
+        const fj = this.find(j)
+        this.f[fi] = fj
       }
     }
 
-    function List2Tree(arr) {
-      let head = null, map = {}
-      arr.forEach(item => {
-        const { parentId, id } = item
-        if (parentId === null) {
-          head = new TreeNode(id)
-          map[id] = head
-        } else if (map[parentId]) {
-          const node = new TreeNode(id)
-          map[parentId].children.push(node)
-          map[id] = node
-        } else {
-          map[parentId] = new TreeNode(id)
-        }
-      })
-      return head
-    }
+    const uf = new UnionFind(7)
 
-    console.log(List2Tree([{ id: 1, parentId: null }, { id: 2, parentId: 1 }, { id: 3, parentId: 2 }]))
+    uf.union(5, 6)
+    uf.union(4, 5)
+    uf.union(3, 4)
+    uf.union(2, 3)
 
-
-    function union(str) {
-      const ans = [], n = str.length
-      function dfs(res, set) {
-        if (res.length === n) {
-          ans.push(res.join(''))
-          return
-        }
-        for (let i = 0; i < n; i++) {
-          if (!set.has(str[i])) {
-            set.add(str[i])
-            dfs([...res, str[i]], set)
-            set.delete(str[i])
-          }
-        }
-      }
-      dfs([], new Set())
-      return ans
-    }
-
-    function combine(arr1, arr2) {
-      let i = 0, j = 0
-      const m = arr1.length, n = arr2.length
-      const ans = []
-      while (i < m || j < n) {
-        const [a, b] = [arr1[i], arr2[j]]
-        if (!a || !b) {
-          if (!a) ans.push(...arr2.slice(j))
-          if (!b) ans.push(...arr1.slice(j))
-          break
-        }
-        if (a > b) {
-          ans.push(b)
-          j++
-        } else if (a < b) {
-          ans.push(a)
-          i++
-        } else {
-          ans.push(a, b)
-          i++
-          j++
-        }
-      }
-      return ans
-    }
-
-    console.log(combine([1, 4, 5], [2, 3, 4]))
-
-    debugger
-    window.addEventListener('storage', e => {
-      console.log(e)
-    })
-    let i = 0
-    setInterval(() => {
-      localStorage.setItem('key', i++)
-    }, 100);
+    console.log(uf)
 
   </script>
 </body>
