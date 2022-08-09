@@ -10,3 +10,5 @@ str="${n}. [${name}](./${filename})"
 echo $str >> ./index.md
 
 touch $filename
+
+echo "## ${filename} \n \`\`\`js \n \`\`\`" >> "./${filename}"
