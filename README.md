@@ -21,7 +21,6 @@
 13. [防抖与节流](./articles/js/JS防抖与节流.md)
 14. [常见排序的 JS 实现](./articles/js/常见排序的JS实现.md)
 15. [JS 柯里化思想](./articles/js/js柯里化.md)
-16. [TS 基础]
 
 ### React
 
@@ -61,6 +60,9 @@
 
 1. [HTTP 跨域](./articles/http/HTTP跨域方法.md)
 
+
+### 安全
+1. [XSS]
 ### 算法
 
 1. [KMP 算法讲解](./articles/algorithm/AL%20KMP.md)
