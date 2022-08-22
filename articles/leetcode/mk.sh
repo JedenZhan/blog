@@ -11,4 +11,4 @@ echo $str >> ./index.md
 
 touch $filename
 
-echo "## ${filename} \n \`\`\`js \n \`\`\`" >> "./${filename}"
+echo "## ${filename} \n\`\`\`js \n\`\`\`" >> "./${filename}"
