@@ -81,6 +81,6 @@
 
 1. [关于 GOPATH 和 GOMOD](./articles/golang/gopath和gomod.md)
 
-### 数据可视化(updating)
+### GIT
 
-1. [Shader](./articles/graphics/shader/index.md)
+1. [基础](./articles/git/base.md)
