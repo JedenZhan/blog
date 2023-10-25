@@ -97,6 +97,7 @@ todo
 2. [二叉树的遍历](./articles/algorithm/AL%20二叉树的遍历.md)
 3. [大根堆和小根堆](./articles/algorithm/AL%20大根堆和小根堆.md)
 4. [刷题啊](./articles/leetcode/index.md)
+4. [热题100](./articles/leetcode/hot100.md)
 
 ### Babel
 
