@@ -56,3 +56,14 @@ let counters = [
 ```js
 counters.reduce((a, b) => {return a + b.value}, 0) // 默认值必须传, 不然第一个值是对象, 会有意想不到的错误
 ```
+
+## compose
+
+整合函数
+
+```js
+function compose(fns) {
+  return fns.reduce((a, b) => arg => a(b(...arg)))
+}
+```
+

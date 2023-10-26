@@ -11,6 +11,7 @@
 ### JavaScript
 
 1. [async 原理](./articles/js/async原理.md)
+1. [闭包](./articles/js/闭包.md)
 2. [Babel 编译 ES module 的结果](./articles/js/Babel怎么转换ESModule的.md)
 3. [Babel 编译 Generator 的结果](./articles/js/Babel编译Generator.md)
 4. [手写 Promise 对象方法](./articles/js/ES6%20Promise对象方法手写.md)
@@ -25,6 +26,7 @@
 13. [防抖与节流](./articles/js/JS防抖与节流.md)
 14. [常见排序的 JS 实现](./articles/js/常见排序的JS实现.md)
 15. [JS 柯里化思想](./articles/js/js柯里化.md)
+15. [事件循环](./articles/js/事件循环.md)
 
 ### React
 
