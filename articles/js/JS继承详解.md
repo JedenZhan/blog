@@ -23,7 +23,6 @@ Child.prototype = new Parent()
 缺点: 
 
 - 原型链中引用类型属性被所有实例共享
-
 - 创建Child实例时, 不能向Parent传参
 
 
