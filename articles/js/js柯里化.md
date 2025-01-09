@@ -50,6 +50,13 @@ function add(a, b, c) {
 
 const curry = fn => judge = (...args) => args.length === fn.length ? fn(...args) : arg => judge(...args, arg)
 
+function curry(fn) {
+  return function judge(...args) {
+    if (args.length === fn.length) return fn(...args)
+    return arg => judge(...args, arg)
+  }
+}
+
 const curriedAdd = curry(add)
 ```
 

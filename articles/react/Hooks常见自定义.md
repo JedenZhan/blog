@@ -5,7 +5,6 @@ tags: [JavaScript, React, ES6]
 
 [本文参考](https://juejin.im/post/5e57d0dfe51d4526ce6147f2#heading-7)
 
-如果你还不了解 React Hooks 可以先看[这篇](https://jedenzhan.github.io/2020/02/12/hooks/)
 
 ## HOOKS 实现 Redux
 
@@ -175,5 +174,32 @@ function useHover(e) {
         }
     }, [e])
     return isHover
+}
+```
+
+## 实现异步effect
+
+```js
+function isAsyncGen(v) {
+    return isFunction(v[Symbol.asyncIterator])
+}
+function useAsyncEffect(fn, deps) {
+    useEffect(() => {
+        const e = fn()
+        let cancelled = false
+
+        async function execute() {
+            if (isAsyncGen(e)) {
+                while (true) {
+                    const res = await e.next()
+                    if (result.done || cancelled) break
+                }
+            } else await e
+        }
+
+        execute()
+
+        return () => cancelled = true
+    }, deps)
 }
 ```

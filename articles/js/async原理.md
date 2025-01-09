@@ -24,7 +24,7 @@ const getValue = async () => {
 getValue() // 3s 后输出 3
 ```
 
-看官们应该了解 async 就是 promise + generator 的语法糖
+async 就是 promise + generator 的语法糖
 
 ## 写出 Generator
 

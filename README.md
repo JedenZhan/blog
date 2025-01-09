@@ -4,31 +4,9 @@
 
 # 目录
 
-todo
+### Algorithm
 
-- jwt 如何实现踢人
-- 洗牌算法，如何验证这个洗牌算法可以把牌洗得足够乱
-- 你有了解过 webpack 现在也支持 esm 了吗？
-- vue
-  - 怎么理解 vue 单向数据流的
-  - eventbus
-  - 自定义指令写过么，自定义指令都有哪些钩子
-  - Vue2 的数据响应式有两个缺陷
-  - 为什么 Vue 没有对数组下标修改做劫持
-  - Vue 和 React 的 Diff 算法有哪些区别
-- react
-- 设计模式
-  - 介绍一下单例模式和它在前端的应用
-  - 
-  - 
-
-- 浏览器
-  - chrome 浏览器最多同时加载多少个资源，那如果想同时加载更多资源应该怎么办
-- 安全
-  - CSRF 如何防御，SameSite 有哪几个值
-- 工程化
-  - esbuild 有了解吗
-  - Nuxt 这类的 SSR 方案和直接渲染 ejs 这类方案有什么本质的区别
+1. [我终于搞懂了二分边界问题](https://github.com/JedenZhan/blog/issues/2)
 
 ### JavaScript
 
@@ -61,13 +39,13 @@ todo
    3. [实现 diff 算法](./articles/react/React%20实现%20diff%20算法.md)
 5. [Redux 源码](./articles/react/Redux源码.md)
 6. [一个简单的新手指导](./articles/react/简单的新手指导.md)
-7. [React setState --挖坑]()
 
 ### Vue
 
 1. [MVVM 原理](https://github.com/JedenZhan/fork-mvvm)
 2. [vue nextTick 源码](./articles/vue/this$nextTick.md)
 3. [Vue3 新特性](./articles/vue/vue3-新特性.md)
+4. [Vue3 自定义指令 v-animate-onscroll](https://github.com/JedenZhan/blog/issues/3)
 
 ### CSS
 
@@ -88,9 +66,6 @@ todo
 
 1. [HTTP 跨域](./articles/http/HTTP跨域方法.md)
 
-
-### 安全
-1. [XSS]
 ### 算法
 
 1. [KMP 算法讲解](./articles/algorithm/AL%20KMP.md)
